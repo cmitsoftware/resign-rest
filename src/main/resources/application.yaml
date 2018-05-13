@@ -1,0 +1,6 @@
+server:
+  port: 8081
+  servlet:
+    contextPath: /resign/rest
+logging:
+  file: "E:\\temp\\resign\\resign-rest.log"
