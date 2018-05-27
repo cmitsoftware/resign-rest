@@ -100,6 +100,4 @@ public class ResourceTagsController {
 		}
 		return new ResponseEntity<ResourceTagResource>(HttpStatus.NOT_FOUND);
 	}
-	
-	
 }
