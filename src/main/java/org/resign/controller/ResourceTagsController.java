@@ -36,8 +36,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value="/resource")
 public class ResourceTagsController {
 
-	@Autowired
-	ResourceRepository resourceRepository;
+//	@Autowired
+//	ResourceRepository resourceRepository;
 	
 	@Autowired
 	TagRepository tagRepository;
@@ -73,31 +73,31 @@ public class ResourceTagsController {
 	@RequestMapping(value="{resourceId}/tags/{tagId}", method=RequestMethod.GET)
 	public ResponseEntity<ResourceTagResource> self(@PathVariable String resourceId, @PathVariable String tagId){
 		
-		Optional<Resource> r = resourceRepository.findById(resourceId);
-		if(r.isPresent()) {
-			
-			if(r.get().getTags() != null) {
-				for(ResourceTag rt: r.get().getTags()) {
-					if(rt.getId().equals(tagId)) {
-						if(StringUtils.isEmpty(rt.getResourceId())) {
-							rt.setResourceId(resourceId);
-						}
-						return new ResponseEntity<ResourceTagResource>(resourceTagAssembler.toResource(rt), HttpStatus.OK);
-					}
-				}
-			}
-		} 
+//		Optional<Resource> r = resourceRepository.findById(resourceId);
+//		if(r.isPresent()) {
+//			
+//			if(r.get().getTags() != null) {
+//				for(ResourceTag rt: r.get().getTags()) {
+//					if(rt.getId().equals(tagId)) {
+//						if(StringUtils.isEmpty(rt.getResourceId())) {
+//							rt.setResourceId(resourceId);
+//						}
+//						return new ResponseEntity<ResourceTagResource>(resourceTagAssembler.toResource(rt), HttpStatus.OK);
+//					}
+//				}
+//			}
+//		} 
 		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	}
 	
 	@RequestMapping(value="{resourceId}/tags/{tagId}", method=RequestMethod.DELETE)
 	public ResponseEntity<ResourceTagResource> deleteResourceTag(@PathVariable String resourceId, @PathVariable String tagId){
 		
-		Optional<Resource> r = resourceRepository.findById(resourceId);
-		if(r.isPresent()) {
-			
-			return new ResponseEntity<ResourceTagResource>(HttpStatus.NO_CONTENT);
-		}
+//		Optional<Resource> r = resourceRepository.findById(resourceId);
+//		if(r.isPresent()) {
+//			
+//			return new ResponseEntity<ResourceTagResource>(HttpStatus.NO_CONTENT);
+//		}
 		return new ResponseEntity<ResourceTagResource>(HttpStatus.NOT_FOUND);
 	}
 }

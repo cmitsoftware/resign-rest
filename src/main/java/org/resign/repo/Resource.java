@@ -7,6 +7,12 @@ import org.resign.embedded.ResourceTag;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+/**
+ * @author cerri
+ *
+ */
 @Document
 public class Resource {
 
@@ -19,26 +25,17 @@ public class Resource {
     private String surname;
     private String desc;
     private String owner;
-    private Date visibility;
+    private Date visibleFrom;
+    private Date visibleTo;
     private Date creation;
     private Date activation;
     private List<ResourceTag> tags;
+    
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)    
+    private String doNotWriteMe;
 
     public Resource() {}
     
-	public Resource(Integer type, Integer status, String name, String surname, String desc, String owner,
-			Date visibility, Date creation, Date activation) {
-		super();
-		this.type = type;
-		this.status = status;
-		this.name = name;
-		this.surname = surname;
-		this.desc = desc;
-		this.owner = owner;
-		this.visibility = visibility;
-		this.creation = creation;
-		this.activation = activation;
-	}
 	public String getId() {
 		return id;
 	}
@@ -81,18 +78,23 @@ public class Resource {
 	public void setOwner(String owner) {
 		this.owner = owner;
 	}
-	public Date getVisibility() {
-		return visibility;
+
+	public Date getVisibleFrom() {
+		return visibleFrom;
 	}
-	public void setVisibility(Date visibility) {
-		this.visibility = visibility;
+
+	public void setVisibleFrom(Date visibleFrom) {
+		this.visibleFrom = visibleFrom;
 	}
-	public Date getCreation() {
-		return creation;
+
+	public Date getVisibleTo() {
+		return visibleTo;
 	}
-	public void setCreation(Date creation) {
-		this.creation = creation;
+
+	public void setVisibleTo(Date visibleTo) {
+		this.visibleTo = visibleTo;
 	}
+
 	public Date getActivation() {
 		return activation;
 	}
@@ -105,4 +107,19 @@ public class Resource {
 	public void setTags(List<ResourceTag> tags) {
 		this.tags = tags;
 	}
+	public Date getCreation() {
+		return creation;
+	}
+	public void setCreation(Date creation) {
+		this.creation = creation;
+	}
+
+	public String getDoNotWriteMe() {
+		return doNotWriteMe;
+	}
+
+	public void setDoNotWriteMe(String doNotWriteMe) {
+		this.doNotWriteMe = doNotWriteMe;
+	}
+	
 }

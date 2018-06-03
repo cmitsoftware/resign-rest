@@ -13,5 +13,6 @@ public class Application {
 		SpringApplication springApplication = new SpringApplication(Application.class);
         springApplication.addListeners(new ApplicationPidFileWriter());     // register PID write to spring boot. It will write PID to file
         springApplication.run(args);
+        
     }
 }

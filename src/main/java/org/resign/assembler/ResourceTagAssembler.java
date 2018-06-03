@@ -21,13 +21,13 @@ public class ResourceTagAssembler extends ResourceAssemblerSupport<ResourceTag, 
 	@Override
 	public ResourceTagResource toResource(ResourceTag rt) {
 		ResourceTagResource rtr = createResource(rt);
-		rtr.add(linkTo(methodOn(ResourceTagsController.class).self(rt.getResourceId(), rt.getId())).withRel("self"));
+//		rtr.add(linkTo(methodOn(ResourceTagsController.class).self(rt.getResourceId(), rt.getId())).withRel("self"));
 		return rtr;
 	}
 	
 	private ResourceTagResource createResource(ResourceTag resourceTag) {
 		ResourceTagResource rtr = new ResourceTagResource();
-		rtr.setTagId(resourceTag.getId());
+//		rtr.setTagId(resourceTag.getId());
 		rtr.setName(resourceTag.getName());
 		return rtr;
 	}

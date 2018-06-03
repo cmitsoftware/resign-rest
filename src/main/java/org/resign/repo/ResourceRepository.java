@@ -9,8 +9,13 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
 
 @RepositoryRestResource(collectionResourceRel = "resource", path = "resource")
-public interface ResourceRepository extends MongoRepository<Resource, String> {
+public interface ResourceRepository extends MongoRepository<Resource, String>, ResourceRepositoryCustom {
 
+//	@Override
+//	@SuppressWarnings("unchecked")
+//    @RestResource(exported = false)
+//    public Resource save(Resource r);
+	
 //	@Override
 //    @RestResource(exported = false)
 //    public Page<Resource> findAll(Pageable pageable);
@@ -25,5 +30,5 @@ public interface ResourceRepository extends MongoRepository<Resource, String> {
 //    
 //    @Query(value = "{'$or' : [{'address': {$regex : ?0, $options: 'i'}},{'accountNumber': {$gt : ?1}}]}")
 //    public Stream<Customer> streamByAddressRegexOrAccountNumberGreater(String address, Integer accountNumber);
-//    
+    
 }

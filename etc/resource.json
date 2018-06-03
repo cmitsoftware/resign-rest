@@ -1,11 +1,11 @@
 {
-	"name":"Sedia di legno modificata",
+	"name":"Sedia di legno e ferro",
     "type":"1",
     "tags":[
     	{
     		"id": "5ae5a0f2a0de913d6cff232a",
     		"name":"Legno",
-    		"category": "Materiale"
+    		"category": "1"
     	}
     ]
 }
