@@ -42,7 +42,7 @@ public class ResourceProcessor implements org.springframework.hateoas.ResourcePr
 				+ "?{imageId}", "deleteImage"));
 		
 		/*
-		 * Update resource image 
+		 * View resource image 
 		 */
 		resource.add(new Link(
 				restConfiguration.getResignImagesHost() 

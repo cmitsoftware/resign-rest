@@ -10,17 +10,17 @@ public class ResourceTag {
 
 	public ResourceTag() {}
 	
-	String resourceId;
+	String tagId;
 //	String id;
 	String name;
-	
-	public String getResourceId() {
-		return resourceId;
+
+	public String getTagId() {
+		return tagId;
 	}
-	public void setResourceId(String resourceId) {
-		this.resourceId = resourceId;
+	public void setTagId(String tagId) {
+		this.tagId = tagId;
 	}
-//	public String getId() {
+	//	public String getId() {
 //		return id;
 //	}
 //	public void setId(String id) {
