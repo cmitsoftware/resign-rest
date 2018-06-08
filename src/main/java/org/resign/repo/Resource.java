@@ -3,6 +3,7 @@ package org.resign.repo;
 import java.util.Date;
 import java.util.List;
 
+import org.resign.embedded.ResourceImage;
 import org.resign.embedded.ResourceTag;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -32,7 +33,7 @@ public class Resource {
     private List<ResourceTag> tags;
     
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)    
-    private String doNotWriteMe;
+    private List<ResourceImage> images;
 
     public Resource() {}
     
@@ -113,13 +114,4 @@ public class Resource {
 	public void setCreation(Date creation) {
 		this.creation = creation;
 	}
-
-	public String getDoNotWriteMe() {
-		return doNotWriteMe;
-	}
-
-	public void setDoNotWriteMe(String doNotWriteMe) {
-		this.doNotWriteMe = doNotWriteMe;
-	}
-	
 }

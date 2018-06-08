@@ -6,8 +6,8 @@ import java.util.Optional;
 
 import org.resign.assembler.ResourceTagAssembler;
 import org.resign.assembler.ResourceTagResource;
-import org.resign.config.TagProcessor;
 import org.resign.embedded.ResourceTag;
+import org.resign.processor.TagProcessor;
 import org.resign.repo.Resource;
 import org.resign.repo.ResourceRepository;
 import org.resign.repo.Tag;

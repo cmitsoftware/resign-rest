@@ -1,4 +1,4 @@
-package org.resign.config;
+package org.resign.processor;
 
 import org.resign.repo.Tag;
 import org.springframework.hateoas.Resource;
