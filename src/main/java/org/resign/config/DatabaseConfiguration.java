@@ -1,5 +1,7 @@
 package org.resign.config;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -10,8 +12,10 @@ import com.mongodb.MongoClient;
 @Configuration
 @PropertySource(
 		value = {"file:${spring.config.additional-location}/db.properties"},
-		ignoreResourceNotFound = true)
+		ignoreResourceNotFound = false)
 public class DatabaseConfiguration extends AbstractMongoConfiguration {
+	
+	private static final Logger log = LoggerFactory.getLogger(DatabaseConfiguration.class);
 	
 	@Value("${db.host}")
     String host;
@@ -24,11 +28,13 @@ public class DatabaseConfiguration extends AbstractMongoConfiguration {
 	
     @Override
     protected String getDatabaseName() {
+    	log.debug("Database name {}", name);
         return name;
     }
 
 	@Override
 	public MongoClient mongoClient() {
+		log.debug("Mongo client {}:{}", host, port);
 		return new MongoClient(host, port);
 	}
 }

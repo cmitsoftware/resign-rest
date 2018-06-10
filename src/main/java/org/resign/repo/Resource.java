@@ -16,6 +16,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 @Document
 public class Resource {
+	
+	public final static Integer IDEA = 1;
+	public final static Integer PROFESSIONAL = 2;
+	public final static Integer RESOURCE = 3;
 
 	@Id
     private String id;
