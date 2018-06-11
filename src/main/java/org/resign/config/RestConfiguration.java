@@ -14,7 +14,8 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapt
 @Configuration
 @EnableMongoRepositories(basePackages = {"org.resign.repo"})
 @PropertySource(
-		value = {"file:${spring.config.additional-location}/resign-services.properties"},
+		value = {"file:${spring.config.additional-location}resign-services.properties"},
+//		value = {"file:${spring.config.location}/resign-services.properties"},
 		ignoreResourceNotFound = true)
 public class RestConfiguration extends RepositoryRestConfigurerAdapter {
 

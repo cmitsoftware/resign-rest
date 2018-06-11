@@ -11,7 +11,8 @@ import com.mongodb.MongoClient;
 
 @Configuration
 @PropertySource(
-		value = {"file:${spring.config.additional-location}/db.properties"},
+		value = {"file:${spring.config.additional-location}db.properties"},
+//		value = {"file:${spring.config.location}db.properties"},
 		ignoreResourceNotFound = false)
 public class DatabaseConfiguration extends AbstractMongoConfiguration {
 	

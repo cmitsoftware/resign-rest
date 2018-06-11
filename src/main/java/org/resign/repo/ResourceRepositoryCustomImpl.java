@@ -2,24 +2,22 @@ package org.resign.repo;
 
 import java.util.Date;
 
-import org.resign.config.DatabaseConfiguration;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.stereotype.Repository;
 
-public class ResourceRepositoryCustomImpl implements ResourceRepositoryCustom{
+@Repository
+public class ResourceRepositoryCustomImpl implements ResourceRepositoryCustom {
 	
-	@SuppressWarnings("resource")
+	@Autowired
+	MongoOperations mongoTemplate;
+	
 	@Override
 	public Resource save(Resource r) {
 		
-		ApplicationContext ctx = 
-	             new AnnotationConfigApplicationContext(DatabaseConfiguration.class);
-		MongoOperations mongoOperation = (MongoOperations) ctx.getBean("mongoTemplate");
-		
 		r.setCreation(new Date());
 		
-		mongoOperation.save(r, "resource");
+		mongoTemplate.save(r, "resource");
 		return r;
 	}
 
